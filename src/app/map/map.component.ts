@@ -137,8 +137,12 @@ export class MapComponent implements OnInit {
         companies: this.companiesList,
         technologies: this.techList
       },
-      position: { left: `${event.clientX}px`, top: `${event.clientY}px` },
-      panelClass: 'custom-dialog-container'
+      // position: { left: `${event.clientX}px`, top: `${event.clientY}px` },
+      panelClass: 'custom-dialog-container',
+      maxHeight: '90vh',
+      maxWidth: '550px',
+      height: '90vh',
+      width: '550px',
     });
   
     dialogRef.afterClosed().subscribe(result => {

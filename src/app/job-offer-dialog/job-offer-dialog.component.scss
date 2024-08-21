@@ -1,31 +1,26 @@
-.bar-container {
-    margin-bottom: 10px;
-}
-
-.bar {
+.charts-container {
     display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 5px;
-}
-
-.bar span {
-    width: 150px;
-    display: inline-block;
-}
-
-.progress-wrapper {
-    flex: 1;
-    background-color: #e0e0e0;
-    border-radius: 4px;
-    height: 20px;
-    position: relative;
-}
-
-.progress-bar {
-    background-color: #3f51b5;
     height: 100%;
-    border-radius: 4px;
-    position: absolute;
-    top: 0;
-    left: 0;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.chart-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
 }

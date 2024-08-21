@@ -1,26 +1,29 @@
-<h1 mat-dialog-title>Detalles de la Oferta</h1>
-<div mat-dialog-content>
-    <p><strong>Región:</strong> {{data.regionName}}</p>
-    <p><strong>Total de Ofertas:</strong> {{data.totalOffers}}</p>
-
-    <div class="bar-container">
-        <div *ngFor="let company of data.companies | keyvalue" class="bar">
-            <span>{{company.key}}</span>
-            <div class="progress-wrapper">
-                <div class="progress-bar" [style.width.%]="company.value"></div>
-            </div>
-        </div>
+<div class="charts-container">
+    <div class="chart-container">
+        <div class="chart-title">Tecnologías</div>
+        <ngx-charts-pie-chart
+            [view]="doughnutChartOptions.view"
+            [results]="technologiesData"
+            [legend]="showLegend"
+            [labels]="showLabels"
+            [doughnut]="true"
+            [scheme]="doughnutChartOptions.colorScheme">
+        </ngx-charts-pie-chart>
     </div>
 
-    <div class="bar-container">
-        <div *ngFor="let tech of data.technologies | keyvalue" class="bar">
-            <span>{{tech.key}}</span>
-            <div class="progress-wrapper">
-                <div class="progress-bar" [style.width.%]="tech.value"></div>
-            </div>
-        </div>
+    <div class="chart-container">
+        <div class="chart-title">Empresas</div>
+        <ngx-charts-bar-vertical
+            [view]="barChartOptions.view"
+            [results]="companiesData"
+            [scheme]="barChartOptions.colorScheme"
+            [xAxis]="barChartOptions.showXAxis"
+            [yAxis]="barChartOptions.showYAxis"
+            [legend]="showLegend"
+            [showXAxisLabel]="barChartOptions.showXAxisLabel"
+            [xAxisLabel]="barChartOptions.xAxisLabel"
+            [showYAxisLabel]="barChartOptions.showYAxisLabel"
+            [yAxisLabel]="barChartOptions.yAxisLabel">
+        </ngx-charts-bar-vertical>
     </div>
-</div>
-<div mat-dialog-actions>
-    <button mat-button (click)="onClose()">Cerrar</button>
 </div>

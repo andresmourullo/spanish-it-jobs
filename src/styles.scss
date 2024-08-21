@@ -13,6 +13,23 @@ html, body {
     width: 100%;
 }
 
+@media (width < 900) {
+    g {
+        #map g {
+            transform: translate(0, -30px);
+        }
+    }
+}
+
+@media (width >= 900) {
+    g {
+        #map g {
+            scale: 3;
+    transform: translate(-650px, -385px);
+        }
+    }
+}
+
 .leaflet-popup-content-wrapper {
     font-size: 14px;
     line-height: 1.4;
@@ -24,11 +41,6 @@ html, body {
 
 .canary-islands {
     transform: translate(100px, -200px);
-}
-
-g {
-    scale: 3;
-    transform: translate(-650px, -370px);
 }
 
 html, body { height: 100%; }
