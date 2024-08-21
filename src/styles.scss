@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+/* css/styles.css */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+#map {
+    height: 100vh; /* Vista completa del alto de la ventana */
+    width: 100vw;  /* Vista completa del ancho de la ventana */
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.leaflet-popup-content-wrapper {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.leaflet-interactive:hover {
+    stroke-width: 5px;
+}
+
+.canary-islands {
+    transform: translate(100px, -200px);
+}
+
+g {
+    scale: 3;
+    transform: translate(-650px, -370px);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
