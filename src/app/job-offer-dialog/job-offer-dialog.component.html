@@ -1,4 +1,8 @@
 <div class="charts-container">
+    <div class="close-icon" (click)="onClose()">
+        &times;
+    </div>
+
     <div class="chart-container">
         <div class="chart-title">Tecnologías</div>
         <ngx-charts-pie-chart
@@ -7,7 +11,8 @@
             [legend]="showLegend"
             [labels]="showLabels"
             [doughnut]="true"
-            [scheme]="doughnutChartOptions.colorScheme">
+            [scheme]="doughnutChartOptions.colorScheme"
+            [legend]="false">
         </ngx-charts-pie-chart>
     </div>
 
@@ -23,7 +28,8 @@
             [showXAxisLabel]="barChartOptions.showXAxisLabel"
             [xAxisLabel]="barChartOptions.xAxisLabel"
             [showYAxisLabel]="barChartOptions.showYAxisLabel"
-            [yAxisLabel]="barChartOptions.yAxisLabel">
+            [yAxisLabel]="barChartOptions.yAxisLabel"
+            [legend]="false">
         </ngx-charts-bar-vertical>
     </div>
 </div>

@@ -33,11 +33,28 @@ export class MapComponent implements OnInit {
   }
 
   initMap(): void {
+    let zoomLevel: number;
+
+    const windowWidth = window.innerWidth;
+
+    if (windowWidth >= 1600) {
+      zoomLevel = 7;
+    } else if (windowWidth >= 1000 && windowWidth < 1600) {
+      zoomLevel = 6;
+    } else if (windowWidth >= 700 && windowWidth < 1000) {
+      zoomLevel = 6;
+    } else {
+      zoomLevel = 5;
+    }
+
+    console.log(zoomLevel);
+    
+
     const map = L.map('map', {
       center: [40.416775, -3.703790],
-      zoom: 5,
-      minZoom: 5,
-      maxZoom: 5,
+      zoom: zoomLevel,
+      minZoom: 4,
+      maxZoom: 7,
       scrollWheelZoom: false,
       doubleClickZoom: false,
       boxZoom: false,
@@ -135,14 +152,15 @@ export class MapComponent implements OnInit {
         regionName: this.regionName,
         totalOffers: this.totalOffers,
         companies: this.companiesList,
-        technologies: this.techList
+        technologies: this.techList,
+        width: window.innerWidth
       },
       // position: { left: `${event.clientX}px`, top: `${event.clientY}px` },
       panelClass: 'custom-dialog-container',
       maxHeight: '90vh',
-      maxWidth: '550px',
+      maxWidth: '90vw',
       height: '90vh',
-      width: '550px',
+      width: '90vw',
     });
   
     dialogRef.afterClosed().subscribe(result => {
